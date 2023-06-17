@@ -1,0 +1,112 @@
+{
+    "products": [
+      {
+        "src": "/images/tomatoes.jpg",
+        "id": "1",
+        "parentSelector": ".products-window",
+        "classfield": "Vegetables",
+        "nameProduct": "Vegan Red Tomatoes",
+        "oldPrice": "14.00",
+        "newPrice": "9.37"
+      },
+      {
+        "src": "/images/almond.jpg",
+        "id": "2",
+        "parentSelector": ".products-window",
+        "classfield": "Nuts",
+        "nameProduct": "Organic Almonds",
+        "oldPrice": "21.00",
+        "newPrice": "18.00"
+      },
+      {
+        "src": "/images/corn.jpg",
+        "id": "3",
+        "parentSelector": ".products-window",
+        "classfield": "Vegetables",
+        "nameProduct": "Fresh Corn",
+        "oldPrice": "21.23",
+        "newPrice": "18.00"
+      },
+      {
+        "src": "/images/champignon.jpg",
+        "id": "4",
+        "parentSelector": ".products-window",
+        "classfield": "Mushrooms",
+        "nameProduct": "Vegan Champignons",
+        "oldPrice": "14.00",
+        "newPrice": "9.37"
+      },
+      {
+        "src": "/images/pumpkin.jpg",
+        "id": "5",
+        "parentSelector": ".products-window",
+        "classfield": "Vegetables",
+        "nameProduct": "Organic Pumpkins",
+        "oldPrice": "18.00",
+        "newPrice": "15.00"
+      },
+      {
+        "src": "/images/cucumber.jpg",
+        "id": "6",
+        "parentSelector": ".products-window",
+        "classfield": "Vegetables",
+        "nameProduct": "Cucumbers",
+        "oldPrice": "21.23",
+        "newPrice": "18.00"
+      },
+      {
+        "src": "/images/papaya.jpg",
+        "id": "7",
+        "parentSelector": ".products-window",
+        "classfield": "Fruits",
+        "nameProduct": "Fresh Papaya",
+        "oldPrice": "13.00",
+        "newPrice": "9.00"
+      },
+      {
+        "src": "/images/pineapple.jpg",
+        "id": "8",
+        "parentSelector": ".products-window",
+        "classfield": "Fruits",
+        "nameProduct": "Ripe Pineapple",
+        "oldPrice": "18.00",
+        "newPrice": "13.50"
+      },
+      {
+        "src": "/images/melon.jpg",
+        "id": "9",
+        "parentSelector": ".products-window",
+        "classfield": "Fruits",
+        "nameProduct": "Organic Melon",
+        "oldPrice": "16.50",
+        "newPrice": "11.00"
+      },
+      {
+        "src": "/images/Kiwi.jpg",
+        "id": "10",
+        "parentSelector": ".products-window",
+        "classfield": "Fruits",
+        "nameProduct": "Fresh Kiwi",
+        "oldPrice": "11.00",
+        "newPrice": "9.00"
+      },
+      {
+        "src": "/images/orange.jpg",
+        "id": "11",
+        "parentSelector": ".products-window",
+        "classfield": "Fruits",
+        "nameProduct": "Organic Orange",
+        "oldPrice": "12.00",
+        "newPrice": "10.50"
+      },
+      {
+        "src": "/images/pepper.jpg",
+        "id": "12",
+        "parentSelector": ".products-window",
+        "classfield": "Vegetables",
+        "nameProduct": "Vegan Red Pepper",
+        "oldPrice": "18.50",
+        "newPrice": "16.00"
+      }
+    ]
+  }

@@ -12,6 +12,7 @@ let view = document.querySelector('.view')
 // console.log(totalCart)
 
 let arr = []
+let collection = []
 totalCart.textContent = arr.length
 
 
@@ -117,8 +118,6 @@ class ProductCart {
             
         </div>`
         this.parent.append(cartview);
-        
-        
     }
 }
 
@@ -126,28 +125,51 @@ const renderCartView = (arrayCart, arrId) => {
     // поменять переборы местами
     // создать словарик с повторяющимися айди
     // при повторении добавить к каунтре + 1
+    // arrId.forEach (item => {
+    //     if (arrayCart.find((product) => product.id === item)) {
+    //         new ProductCart(
+    //             product.src,
+    //             product.id,
+    //             product.parentSelector,
+    //             product.nameProduct,
+    //             product.newPrice,                
+    //             product.countrValue).renderCart();
+    //     } 
+    // })
+    console.log(arrId)
+
     arrayCart.forEach(product => {
-
         if (arrId.find((item) => item === product.id)) {           
-
             new ProductCart(
                 product.src,
                 product.id,
                 product.parentSelector,
                 product.nameProduct,
                 product.newPrice,                
-                product.countrValue).renderCart();
-                
+                product.countrValue
+                ).renderCart(); 
+                // collection.push(product.id)
+            
+            // checker(collection, product)
+            // console.log(product.countrValue )
         }  
-       
     })
     
     resultSum.value = Array.from(document.querySelectorAll('.counter__price'))
                            .map(item => item.value)
                            .reduce((ar , item) => {return ar + +item} , 0).toFixed(2)
-    console.log('liza')
     delButton()
+    counter()
 }
+
+// const checker = (collection, product) => {
+//     collection.forEach(item => {
+//         if (item == product.id) {
+//             product.countrValue ++
+//         }
+//         return product.countrValue
+//     })
+// }
 
 
 
@@ -156,11 +178,8 @@ const openCart = () => {
     cart.addEventListener('click', () => {
         cartConnection.classList.add('toggle-popup');
         cartWindow.innerHTML = ''
-        // fetch('http://localhost:3000/products')
-        //     .then(response => response.json())
-        //     .then(data => renderCartView(data, arr))
-        render().then(data => renderCartView(data, arr))
-        // console.log("dfghj")
+        render()
+            .then(data => renderCartView(data, arr))
     })
 }
 
@@ -171,7 +190,6 @@ const buyBottom = () => {
     buy.forEach(item => {   //здесь ли это должно быть, по-другому кнопка не срабатывала
         item.addEventListener('click', () => {
             item.setAttribute("disabled", "disabled")
-            // console.log(item.parentElement.parentElement.id)
             arr.push(item.id)
             totalCart.textContent = arr.length
             console.log(arr)
@@ -207,7 +225,14 @@ const counter = () => {
             let valuePrice = target.parentElement.querySelector('.counter__value')
             // let pricePrice = target.parentElement.querySelector('.counter__price')
             valuePrice.value++
-            resultSum.value = parseFloat(dataPrice * valuePrice.value).toFixed(2)
+
+
+
+            // resultSum.value = Array.from(document.querySelectorAll('.counter__price'))
+                                    // // .map(item => item.value)
+                                    // .reduce((totalSum, item) => {
+                                    //     return totalSum + +item
+                                    // }, 0)
             // resultSum.value += +pricePrice.value
             // valuePrice.setAttribute('value', valuePrice.value)
             arr.push(target.parentElement.parentElement.id)
@@ -232,6 +257,11 @@ const counter = () => {
             // resultSum.value -= +pricePrice.value
         }
 
+        // resultSum.value = Array.from(document.querySelectorAll('.counter__price'))
+        //                    .map(item => item.value)
+        //                    .reduce((ar , item) => {return ar + +item} , 0).toFixed(2)
+
+        
         // finalSum(resultSum)
         // resultSum.value = parseFloat(dataPrice * valuePrice.value).toFixed(2)
         
@@ -249,7 +279,7 @@ const delButton = () => {
             let target = e.target
             arr = arr.filter(elem => elem !== target.parentElement.id)
             // console.log(target.parentElement.id)
-            console.log('Oleg')
+            // console.log('Oleg')
             totalCart.textContent = arr.length
             // console.log(arr)
             // render().then(data => renderCartView(data, arr))
@@ -259,8 +289,8 @@ const delButton = () => {
     
 }
 
-let del = delButton.bind(renderCartView())
-del()
+// let del = delButton.bind(renderCartView())
+// del()
 
 
 const finalSum = (resultSum) => {
@@ -294,8 +324,12 @@ const viewAll = () => {
     })
 }
 
+const resultS = () => {
+    
+}
+
 renderView()
-counter()
+// counter()
 viewAll()
 openCart()
 closeCart()
